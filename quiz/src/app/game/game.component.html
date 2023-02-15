@@ -1,21 +1,21 @@
 <div class="container mt-5 ">
-    <div class="row  ">
-        <div class="col-md-8 border border-success">
+    <div class="row">
+        <div class="col-md-8 ">
             <div class="row border-bottom  m-1 p-2 " >
                 {{questao.pergunta}}
             </div>
-            <div class="m-auto border border-danger">
+            <div class="m-auto ">
 
                 <div class="row  m-1 p-2 ">
-                    <button type="button" value="1" class=" btn btn-block btn-outline-secondary m-1" (click)="responder($event)"> {{questao.resposta1}} </button>
+                    <button type="button" value="1" class=" btn btn-block btn-primary m-1" (click)="responder($event)"> {{questao.resposta1}} </button>
                 </div>
 
                 <div class="row  m-1 p-2 ">
-                    <button type="button" value="2" class=" btn btn-block btn-outline-secondary m-1" (click)="responder($event)" > {{questao.resposta2}} </button>
+                    <button type="button" value="2" class=" btn btn-block btn-primary m-1" (click)="responder($event)" > {{questao.resposta2}} </button>
                 </div>
 
                 <div class="row  m-1 p-2  ">
-                    <button type="button" value="3" class=" btn btn-block btn-outline-secondary m-1" (click)="responder($event)"> {{questao.resposta3}} </button>
+                    <button type="button" value="3" class=" btn btn-block btn-primary m-1" (click)="responder($event)"> {{questao.resposta3}} </button>
                 </div>
 
 
