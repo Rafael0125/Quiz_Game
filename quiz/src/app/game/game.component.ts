@@ -13,6 +13,8 @@ export class GameComponent implements OnInit {
   public rodada:number = 0
   public questao:Questoes = this.questoes[this.rodada]
 
+  public placar:number = 0
+
   constructor() {
   }
 
@@ -24,7 +26,7 @@ export class GameComponent implements OnInit {
 
     if(teste === this.questao.respostaCerta){
       alert('Resposta Correta ')
-
+      this.placar ++
       this.rodada ++
 
       this.atualizaRodada()

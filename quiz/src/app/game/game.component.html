@@ -1,11 +1,19 @@
 <div class="container mt-5 ">
+    <div class="row justify-content-end text-white">
+        <div class="col-md-12 ">
+            <div class="col-12 text-center"> <!-- Placar do Jogador -- Inicio -->
+                Acertos
+                <h1> {{placar}} </h1>
+            </div> <!-- Placar do Jogador -- Fim -->
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-8 ">
-            <div class="row border-bottom  m-1 p-2 " >
+            <div class="row border-bottom m-1 p-2 text-white" >
                 {{questao.pergunta}}
             </div>
-            <div class="m-auto ">
 
+            <div class="m-auto">
                 <div class="row  m-1 p-2 ">
                     <button type="button" value="1" class=" btn btn-block btn-primary m-1" (click)="responder($event)"> {{questao.resposta1}} </button>
                 </div>
@@ -17,14 +25,7 @@
                 <div class="row  m-1 p-2  ">
                     <button type="button" value="3" class=" btn btn-block btn-primary m-1" (click)="responder($event)"> {{questao.resposta3}} </button>
                 </div>
-
-
-
             </div>
-
         </div>
-
-        
     </div>
-
 </div>
