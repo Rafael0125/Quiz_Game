@@ -22,9 +22,9 @@ export class GameComponent implements OnInit {
 
 
   public responder(resposta:Event){
-    let teste = (<HTMLInputElement> resposta.target).value
+    let retorno = (<HTMLInputElement> resposta.target).value
 
-    if(teste === this.questao.respostaCerta){
+    if(retorno === this.questao.respostaCerta){
       alert('Resposta Correta ')
       this.placar ++
       this.rodada ++
@@ -37,6 +37,8 @@ export class GameComponent implements OnInit {
 
     } else{
       alert('Resposta Errada')
+      this.rodada ++
+      this.atualizaRodada()
     }
   }
 
