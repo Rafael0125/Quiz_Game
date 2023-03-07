@@ -36,6 +36,10 @@ export class GameComponent implements OnInit {
 
     } else{
       alert('Resposta Errada')
+      this.rodada ++
+      this.atualizaRodada()
+
+
     }
   }
 
