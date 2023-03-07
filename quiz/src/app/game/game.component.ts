@@ -21,9 +21,9 @@ export class GameComponent implements OnInit {
   ngOnInit() {}
 
   public responder(resposta:Event){
-    let retorno = (<HTMLInputElement> resposta.target).value
+    let teste = (<HTMLInputElement> resposta.target).value
 
-    if(retorno === this.questao.respostaCerta){
+    if(teste === this.questao.respostaCerta){
       alert('Resposta Correta ')
       this.placar ++
       this.rodada ++
@@ -36,8 +36,6 @@ export class GameComponent implements OnInit {
 
     } else{
       alert('Resposta Errada')
-      this.rodada ++
-      this.atualizaRodada()
     }
   }
 
