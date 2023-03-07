@@ -20,7 +20,6 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {}
 
-
   public responder(resposta:Event){
     let retorno = (<HTMLInputElement> resposta.target).value
 
