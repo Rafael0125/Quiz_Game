@@ -1,1 +1,32 @@
-<app-game></app-game>
+
+
+
+<div *ngIf ='jogoEmAndamento; else fimDeJogo'>
+    <app-game (encerrarJogo)="encerrarJogo($event)"></app-game>
+</div>
+
+<ng-template #fimDeJogo>
+    <div *ngIf="tipoEncerramento === 'derrota',else fimDeJogoVitoria" class="container mt-5 d-flex justify-content-center align-items-center" style="height: 400px;">
+        <div class="row">
+            <div class="col-12 my-3 text-center">
+                <h1 class=" text-danger"> Fim de jogo, você perdeu</h1>
+                <button type="button" (click)="reiniciarJogo()" class="btn btn-primary"> Recomeçar </button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #fimDeJogoVitoria>
+    <div class="container mt-5 d-flex justify-content-center align-items-center" style="height: 400px;">
+        <div class="row">
+            <div class="col-12 my-3 text-center">
+                <h1 class=" text-success"> Fim de jogo, você venceu </h1>
+                <button type="button" (click)="reiniciarJogo()" class="btn btn-primary"> Recomeçar </button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+
+

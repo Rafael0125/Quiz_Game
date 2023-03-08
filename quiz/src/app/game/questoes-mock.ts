@@ -2,10 +2,10 @@ import { Questoes } from "../shared/questoes.model"
 
 export const QUESTOES: Questoes[] = [
     {
-        pergunta : "Quantas champions tem o Tony Kross ?",
-        resposta1 : "5 Champions",
-        resposta2 : "3 Champions",
-        resposta3 : "4 Champions",
+        pergunta : "Quantas vezes Tony Kross foi campeão da Champions ?",
+        resposta1 : "5 Vezes",
+        resposta2 : "3 Vezes",
+        resposta3 : "4 Vezes",
         respostaCerta : '1'
     },
 

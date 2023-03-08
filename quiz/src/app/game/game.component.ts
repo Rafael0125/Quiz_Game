@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { Questoes } from '../shared/questoes.model';
 import { QUESTOES } from './questoes-mock';
 
@@ -7,7 +7,7 @@ import { QUESTOES } from './questoes-mock';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, OnDestroy {
 
   public questoes:Questoes[]=QUESTOES
   public rodada:number = 0
@@ -15,31 +15,35 @@ export class GameComponent implements OnInit {
 
   public placar:number = 0
 
-  constructor() {
-  }
+  @Output() public encerrarJogo: EventEmitter<string> = new EventEmitter()
+  
+
+  constructor() {}
 
   ngOnInit() {}
 
-  public responder(resposta:Event){
-    let teste = (<HTMLInputElement> resposta.target).value
+  ngOnDestroy() {}
 
-    if(teste === this.questao.respostaCerta){
-      alert('Resposta Correta ')
+  public responder(resposta:Event){
+    let retorno = (<HTMLInputElement> resposta.target).value
+
+    if(retorno === this.questao.respostaCerta){
       this.placar ++
       this.rodada ++
-
       this.atualizaRodada()
-
-      if(this.rodada === this.questoes.length){
-        alert('Jogo encerrado')
-      }
 
     } else{
-      alert('Resposta Errada')
       this.rodada ++
       this.atualizaRodada()
+    }
+    if(this.rodada === this.questoes.length){
+      alert(`Jogo encerrado, você acertou ${this.placar} de ${this.questoes.length}`)
 
-
+      if(this.placar === this.questoes.length){
+        this.encerrarJogo.emit('vitoria')
+      }if(this.placar !== this.questoes.length){
+        this.encerrarJogo.emit('derrota')
+      }
     }
   }
 
