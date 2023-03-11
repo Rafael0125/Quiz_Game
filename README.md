@@ -3,6 +3,6 @@
  
  
  
-  <h3 align="center"><a href="http://quiz-game-v1.s3-website-sa-east-1.amazonaws.com/">Link do Jogo</a></h3><br>
+  <h3 align="center"><a href="http://quiz-game-v2.s3-website-us-east-1.amazonaws.com/">Link do Jogo</a></h3><br>
  
  
